@@ -313,37 +313,37 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Add touch support for mobile
-let touchStartY = 0;
-document.addEventListener('touchstart', function(e) {
-    touchStartY = e.touches[0].clientY;
-});
+// Add touch support for mobile - disabled to prevent unwanted scrolling
+// let touchStartY = 0;
+// document.addEventListener('touchstart', function(e) {
+//     touchStartY = e.touches[0].clientY;
+// });
 
-document.addEventListener('touchend', function(e) {
-    const touchEndY = e.changedTouches[0].clientY;
-    const diff = touchStartY - touchEndY;
+// document.addEventListener('touchend', function(e) {
+//     const touchEndY = e.changedTouches[0].clientY;
+//     const diff = touchStartY - touchEndY;
     
-    if (Math.abs(diff) > 50) {
-        // Swipe detected
-        const sections = document.querySelectorAll('section');
-        const currentSection = Array.from(sections).find(section => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= 0 && rect.top < window.innerHeight / 2;
-        });
+//     if (Math.abs(diff) > 50) {
+//         // Swipe detected
+//         const sections = document.querySelectorAll('section');
+//         const currentSection = Array.from(sections).find(section => {
+//             const rect = section.getBoundingClientRect();
+//             return rect.top >= 0 && rect.top < window.innerHeight / 2;
+//         });
         
-        if (currentSection) {
-            const currentIndex = Array.from(sections).indexOf(currentSection);
+//         if (currentSection) {
+//             const currentIndex = Array.from(sections).indexOf(currentSection);
             
-            if (diff > 0 && currentIndex < sections.length - 1) {
-                // Swipe up - go to next section
-                sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
-            } else if (diff < 0 && currentIndex > 0) {
-                // Swipe down - go to previous section
-                sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    }
-});
+//             if (diff > 0 && currentIndex < sections.length - 1) {
+//                 // Swipe up - go to next section
+//                 sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+//             } else if (diff < 0 && currentIndex > 0) {
+//                 // Swipe down - go to previous section
+//                 sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+//             }
+//         }
+//     }
+// });
 
 // Add parallax effect on mouse move
 document.addEventListener('mousemove', function(e) {
