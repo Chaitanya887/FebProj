@@ -127,8 +127,16 @@ function handleNo() {
         'Are you sure? 💕',
         'Think again! 💖',
         'Pretty please? 💗',
-        'I\'ll be sad! 🥺',
+        'I\'ll be sad! 💓',
         'Last chance! 💝',
+        'Don\'t break my heart! 💔',
+        'Give it another thought! 💭',
+        'Are you really sure? 🤔',
+        'My heart hurts! 💔',
+        'Just one more chance! 🙏',
+        'Please say yes! 🥺',
+        'Think about us! 💑',
+        'Don\'t do this! 😢',
     ];
     
     // Play sad sound
@@ -359,3 +367,4 @@ document.addEventListener('mousemove', function(e) {
         heart.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
     });
 });
+
